@@ -1,0 +1,3 @@
+Data mining effeciency by custom croping
+process indicator
+bard setting storage PSID_token
