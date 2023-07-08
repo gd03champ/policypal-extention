@@ -3,7 +3,7 @@
   "name": "Terms Trackers",
   "version": "1.0",
   "description": "A browser extension to summarize and analyze terms & conditions and privacy policies.",
-  "permissions": ["activeTab", "storage", "tabs", "https://*/"],
+  "permissions": ["activeTab", "storage", "tabs", "contextMenus", "https://*/"],
   "background": {
     "scripts": ["popup.js"],
     "persistent": false

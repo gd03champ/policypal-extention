@@ -1,3 +1,35 @@
+// Create the context menu item
+chrome.runtime.onInstalled.addListener(function() {
+    chrome.contextMenus.create({
+      id: "inspectTos",
+      title: "Inspect TOS or Privacy Policy",
+      contexts: ["link"],
+      documentUrlPatterns: ["*://*/*"]
+    });
+  });
+  
+  // Add a listener for the context menu item click event
+  chrome.contextMenus.onClicked.addListener(function(info, tab) {
+    if (info.menuItemId === "inspectTos") {
+      var link = info.linkUrl;
+  
+      if (link !== '') {
+        fetchContent(link)
+          .then(function (content) {
+            return analyzeContent(content);
+          })
+          .then(function (summary) {
+            showSummary(summary);
+          })
+          .catch(function (error) {
+            console.error('Error:', error);
+          });
+      }
+    }
+  });
+  
+  
+
 document.addEventListener('DOMContentLoaded', function () {
     var analyzeButton = document.getElementById('analyzeButton');
     analyzeButton.addEventListener('click', function () {
