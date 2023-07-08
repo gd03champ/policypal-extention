@@ -1,39 +1,37 @@
-# terms-tracer
-
 README.md
 
-# Terms Trackers
+# Policypal: Your Smart Companion for Terms & Privacy Analysis 🕵️‍♀️🔍
 
-Terms Trackers is a browser extension that allows users to analyze and summarize terms & conditions and privacy policies of websites. The extension utilizes the Bard API, a custom API built with Node.js and Express, to perform the analysis and generate the summaries. This README provides an overview of the project, explains how it works, and provides instructions on how to use and contribute to the project.
+Policypal is a browser extension that allows users to analyze and summarize terms & conditions and privacy policies of websites. The extension 🚀 harnesses the power of the Bard API 🧙‍♂️✨, a custom API built with Node.js and Express, to perform the analysis and generate the summaries. Get ready to dive into the world of legal jargon and privacy policies with ease! 💪 and never fall for hidden terms or harmfull privacy policies again.
 
-## Tech Stack
+## Tech Stack 🛠️
 
-The project uses the following technologies and tools:
+The project is built using an awesome tech stack:
 
-- JavaScript
-- Chrome Extension API
-- HTML/CSS
-- Node.js
-- Express
-- Bard API (Custom API for analysis and summarization)
+- JavaScript 🌐
+- Chrome Extension API 🧩
+- HTML/CSS 🎨
+- Node.js 🚀
+- Express ⚡️
+- Bard API (Custom API for analysis and summarization) 🧪
 
-## How it Works
+## How it Works 🔄
 
-The Terms Trackers extension provides two main functionalities: analyzing a specific TOS or privacy policy page and summarizing its content. The process flow is as follows:
+The Policypal extension provides two main functionalities: analyzing a specific TOS or privacy policy page and summarizing its content. The process flow is as follows:
 
-1. Right-click Context Menu: When you right-click on a link to a terms of service (TOS) or privacy policy page, the extension adds an option "Inspect TOS or Privacy Policy" to the context menu.
+1. Right-click Context Menu 🖱️: When you right-click on a link to a terms of service (TOS) or privacy policy page, the extension adds an option "Inspect TOS or Privacy Policy" to the context menu. Go ahead, give it a try! 😉
 
-2. Clicking the Context Menu Option: When you select the "Inspect TOS or Privacy Policy" option from the context menu, the extension opens a progress popup window and initiates the analysis process.
+2. Clicking the Context Menu Option 🖱️: When you select the "Inspect TOS or Privacy Policy" option from the context menu, the extension opens a progress popup window and initiates the analysis process. Get ready for some behind-the-scenes action! 🎬
 
-3. Fetching the Content: The extension fetches the content of the selected TOS or privacy policy page and sends it to the Bard API for analysis. The progress popup window shows the progress as "Processing...".
+3. Fetching the Content 🌐: The extension fetches the content of the selected TOS or privacy policy page and sends it to the Bard API for analysis. The progress popup window shows the progress as "Processing...". Time to gather all the juicy details! 📚🔎
 
-4. Analyzing the Content: The Bard API receives the content and analyzes it using natural language processing techniques. It generates a summary and identifies potential harmful elements in the content.
+4. Analyzing the Content 🔬: The Bard API receives the content and puts on its magic hat 🎩 to analyze it using sophisticated natural language processing techniques. It generates a summary and identifies potential harmful elements in the content. It's like having a legal wizard by your side! 🧙‍♂️✨
 
-5. Displaying the Summary: The generated summary is sent back to the extension, which then displays it in an alert window and updates the progress popup with "Analysis complete ✅". If any errors occur during the process, the progress popup shows an error message.
+5. Displaying the Summary 📋: The generated summary is sent back to the extension, which then displays it in an alert window and updates the progress popup with "Analysis complete ✅". Sit back, relax, and enjoy the condensed version! 📖📝
 
-6. Closing the Progress Popup: After displaying the summary or encountering an error, the progress popup window is automatically closed.
+6. Closing the Progress Popup 🚪: After displaying the summary or encountering an error, the progress popup window is automatically closed. No need to say goodbye, it knows when to exit gracefully! 👋
 
-## Usage
+## Usage 🚀
 
 To use the Terms Trackers extension, follow these steps:
 
@@ -51,36 +49,29 @@ To use the Terms Trackers extension, follow these steps:
 
 3. Enable Developer mode by toggling the switch at the top right corner.
 
-4. Click on the "Load unpacked" button and select the cloned project directory (`terms-trackers`).
+4. Click on the "Load unpacked" button and select the cloned project directory (`policypal-extention`). Let the extension come to life! ⚡️
 
-5. The extension should now be added to your Chrome browser.
+5. Update the API key in the Options page:
+   - Click on the Policypal extension icon in the Extensions menu. It's time to give it some personal touch! 😎
+   - Select "Options" and enter your API key in the provided input field. Let the magic happen! 🪄✨
 
-6. Update the API key in the Options page:
-   - Click on the Terms Trackers extension icon in the Extensions menu.
-   - Select "Options".
-   - Enter your API key in the provided input field and click "Save".
+6. To analyze a TOS or privacy policy page:
+   - Right-click on a link to a TOS or privacy policy page. See the magic unfold before your eyes! 🪄✨
+   - Select the "Inspect TOS or Privacy Policy" option from the context menu. It's like having a secret detective tool! 🕵️‍♂️
+   - The progress popup window will appear, showing the progress of the analysis. Stay tuned! ⌛️📊
+   - After the analysis is complete, the summary will be displayed in an alert window. Get ready to see the essence of the content! 🧪✨
+   - The progress popup window will automatically close. It knows when it's time to exit the stage! 🚪🎭
 
-7. To analyze a TOS or privacy policy page:
-   - Right-click on a link to a TOS or privacy policy page.
-   - Select the "Inspect TOS or Privacy Policy" option from the context menu.
-   - The progress popup window will appear, showing the progress of the analysis.
-   - After the analysis is complete, the summary will be displayed in an alert window.
-   - The progress popup window will automatically close.
+## Bard API 🧙‍♂️🔮
 
-## Bard API
+The Bard API is an unofficial custom API developed by me using Node.js and Express. The Bard API uses bard to generate result using bard cookieID and input prompt. In the Terms Trackers extension, the Bard API works its magic to analyze the content of TOS or privacy policy pages. It provides the summarized results and identifies potential harmful elements. Make sure to set up and deploy the Bard API to unlock its full potential! ✨
 
-The Bard API is a custom API developed using Node.js and Express. It leverages natural language processing techniques to analyze and summarize text input. The API requires an API key (psidCookie) to authenticate the requests and provides the analyzed results.
+## Contributing 🤝
 
-In the Terms Trackers extension, the Bard API is utilized to analyze the content of TOS or privacy policy pages. The extension sends the content to the Bard API, which processes it and returns the summary and identified harmful elements. The API key is stored in the extension's options page and retrieved when making requests to the Bard API.
+Contributions to the Terms Trackers project are highly appreciated! We believe in the power of collaboration and welcome your contributions with open arms. If you find any issues or have suggestions for improvements, please create a GitHub issue or submit a pull request. Before contributing, make sure to review the project's guidelines for contributing and code of conduct.
 
-To set up and deploy the Bard API, refer to the Bard API documentation and make sure to have the API running and accessible for the extension to communicate with.
+Let's make the Policypal extension even more awesome together!
 
-## Contributing
+## License 📄
 
-Contributions to the Terms Trackers project are welcome! If you find any issues or have suggestions for improvements, please create a GitHub issue or submit a pull request. Before contributing, make sure to review the project's guidelines for contributing and code of conduct.
-
-We appreciate all contributions and look forward to collaborating with the open-source community to enhance the functionality and usability of the Terms Trackers extension.
-
-## License
-
-The Terms Trackers project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+The Terms Trackers project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Feel free to explore, modify, and use the code according to the terms of the license. Let the magic begin! ✨✨
