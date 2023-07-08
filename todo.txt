@@ -1,4 +1,5 @@
 Data mining effeciency by custom croping
-process indicator
+process indicator {cm:2023-07-08}
 bard setting storage PSID_token {cm:2023-07-08}
 right click inspect {cm:2023-07-08}
+branding

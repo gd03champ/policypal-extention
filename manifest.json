@@ -23,6 +23,7 @@
     "default_popup": "popup.html"
   },
   "options_page": "options.html",
+  "web_accessible_resources": ["progress.html"],
   "icons": {
     "16": "files/icon16.png",
     "48": "files/icon48.png",

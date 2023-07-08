@@ -1,34 +1,38 @@
 // Create the context menu item
-chrome.runtime.onInstalled.addListener(function() {
+chrome.runtime.onInstalled.addListener(function () {
     chrome.contextMenus.create({
-      id: "inspectTos",
-      title: "Inspect TOS or Privacy Policy",
-      contexts: ["link"],
-      documentUrlPatterns: ["*://*/*"]
+        id: "inspectTos",
+        title: "Inspect TOS or Privacy Policy",
+        contexts: ["link"],
+        documentUrlPatterns: ["*://*/*"]
     });
-  });
-  
-  // Add a listener for the context menu item click event
-  chrome.contextMenus.onClicked.addListener(function(info, tab) {
+});
+
+// Add a listener for the context menu item click event
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
     if (info.menuItemId === "inspectTos") {
-      var link = info.linkUrl;
-  
-      if (link !== '') {
-        fetchContent(link)
-          .then(function (content) {
-            return analyzeContent(content);
-          })
-          .then(function (summary) {
-            showSummary(summary);
-          })
-          .catch(function (error) {
-            console.error('Error:', error);
-          });
-      }
+        var link = info.linkUrl;
+
+        if (link !== '') {
+            openProgressPopup();
+            fetchContent(link)
+                .then(function (content) {
+                    updateProgress('Prompting Content');
+                    return analyzeContent(content);
+                })
+                .then(function (summary) {
+                    updateProgress('Analysis complete ✅');
+                    showSummary(summary);
+                    closeProgressPopup();
+                })
+                .catch(function (error) {
+                    console.error('Error:', error);
+                    updateProgress('Error: \n' + error + "\n Please try again later or contact GD");
+                });
+        }
     }
-  });
-  
-  
+});
+
 
 document.addEventListener('DOMContentLoaded', function () {
     var analyzeButton = document.getElementById('analyzeButton');
@@ -37,15 +41,20 @@ document.addEventListener('DOMContentLoaded', function () {
         var link = linkInput.value.trim();
 
         if (link !== '') {
+            openProgressPopup();
             fetchContent(link)
                 .then(function (content) {
+                    updateProgress('Prompting Content');
                     return analyzeContent(content);
                 })
                 .then(function (summary) {
+                    updateProgress('Analysis complete ✅ \n' + summary);
                     showSummary(summary);
+                    closeProgressPopup();
                 })
                 .catch(function (error) {
                     console.error('Error:', error);
+                    updateProgress('Error:', error + "\n Please try again later or contact GD");
                 });
         }
     });
@@ -55,6 +64,30 @@ document.addEventListener('DOMContentLoaded', function () {
         chrome.runtime.openOptionsPage();
     });
 });
+
+//progress interact functions
+function openProgressPopup() {
+    var progressUrl = chrome.extension.getURL('progress.html');
+    chrome.windows.create({
+        url: progressUrl,
+        type: 'popup',
+        width: 370,
+        height: 400
+    }, function (window) {
+        // Send a message to the progress popup to update the progress
+        chrome.tabs.sendMessage(window.tabs[0].id, { action: 'updateProgress', progress: 'Processing...' });
+    });
+}
+
+function updateProgress(progress) {
+    // Send a message to the progress popup to update the progress
+    chrome.runtime.sendMessage({ action: 'updateProgress', progress: progress });
+}
+
+function closeProgressPopup() {
+    // Send a message to the progress popup to update the progress
+    chrome.runtime.sendMessage({ action: 'closeProgressPopup' });
+}
 
 function fetchContent(link) {
     return new Promise(function (resolve, reject) {
@@ -89,7 +122,6 @@ function processTos(content) {
     console.log("web content truncated to 1500 words: " + trucCont);
     return trucCont;
 }
-
 
 function analyzeContent(content) {
     return new Promise(function (resolve, reject) {
