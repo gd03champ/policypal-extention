@@ -59,8 +59,9 @@ To use the Terms Trackers extension, follow these steps:
 
 7. To analyze a TOS or privacy policy page:
    - Right-click on a link to a TOS or privacy policy page.
-   - Select the "[PolicyPal✨] - Inspect Policy" option from the context menu. It's like having a secret detective tool! 🕵️‍♂️<br>
-   <img width="437" alt="image" src="https://github.com/gd03champ/policypal-extention/assets/63779654/10be369e-2c33-4bf3-b7bf-a704733d87c6"><br>
+   - Select the "[PolicyPal✨] - Inspect Policy" option from the context menu or clikcing the extention icon top open popup. It's like having a secret detective tool! 🕵️‍♂️<br>
+   <img width="437" alt="image" src="https://github.com/gd03champ/policypal-extention/assets/63779654/10be369e-2c33-4bf3-b7bf-a704733d87c6"><img width="363" alt="image" src="https://github.com/gd03champ/policypal-extention/assets/63779654/7a26806e-b7b5-4b27-ad0a-4304d2e4f7b6">
+<br>
    - The progress popup window will appear, showing the progress of the analysis. Stay tuned! ⌛️📊<br>
    <img width="290" alt="image" src="https://github.com/gd03champ/policypal-extention/assets/63779654/aed70404-3f1b-4ab5-8259-8c68fab602fe"><br>
    - After the analysis is complete, the summary will be displayed in an alert window. Get ready to see the essence of the content! 🧪✨<br>
