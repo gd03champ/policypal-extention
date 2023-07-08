@@ -6,20 +6,95 @@
     <title>Terms &amp; Conditions Analyzer</title>
     <style>
         body {
-            width: 300px;
-            height: 250px;
+            width: 350px;
+            height: 400px;
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 20px;
+            background-color: #f7f7f7;
+        }
+
+        h1 {
+            color: #5c79e3;
+        }
+
+        p {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 200px;
+            height: 30px;
+            padding: 5px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        button {
+            width: 100px;
+            height: 30px;
+            background-color: #5c79e3;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        a {
+            color: #5c79e3;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .magnifying-glass {
+            display: inline-block;
+            position: relative;
+            width: 20px;
+            height: 20px;
+            margin-left: 5px;
+            margin-bottom: -5px;
+        }
+
+        .magnifying-glass:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            border: 1px solid #5c79e3;
+            border-radius: 50%;
+        }
+
+        .magnifying-glass:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 2px;
+            background-color: #5c79e3;
+            border-radius: 2px;
         }
     </style>
 </head>
 
 <body>
-    <h1>Terms & Conditions Analyzer</h1>
+    <h1>Terms &amp; Conditions Analyzer</h1>
     <p>Paste the link to terms or privacy policies:</p>
     <input type="text" id="linkInput" placeholder="Enter the link">
-    <button id="analyzeButton">Analyze</button>
+    <button id="analyzeButton">Analyze <span class="magnifying-glass"></span></button>
+    <p>Configure API Key <a href="#" id="optionsLink">here</a>.</p>
     <script src="popup.js"></script>
 </body>
 

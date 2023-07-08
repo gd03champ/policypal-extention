@@ -17,6 +17,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
         }
     });
+
+    var optionsLink = document.getElementById('optionsLink');
+    optionsLink.addEventListener('click', function () {
+        chrome.runtime.openOptionsPage();
+    });
 });
 
 function fetchContent(link) {
@@ -65,7 +70,7 @@ function analyzeContent(content) {
                 alert('Please enter your API key in the options page.');
                 reject(new Error('API key not found'));
                 return;
-              }
+            }
 
             // Create the request body
             //const promptEng = "Given below is the terms of servoce or privacy policy of a website. Analyze and summarize it : ";
