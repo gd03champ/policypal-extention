@@ -53,18 +53,18 @@ To use the Terms Trackers extension, follow these steps:
 
 5. Update the API key in the Options page:
    
-   - Click on the Policypal extension icon in the Extensions menu. It's time to give it some personal touch! 😎
-   <img width="960" alt="image" src="https://github.com/gd03champ/policypal-extention/assets/63779654/9c700672-5ecb-4b51-bdf4-351e2f7621ab">
+   - Click on the Policypal extension icon in the Extensions menu. It's time to give it some personal touch! 😎 <br>
+   <img width="960" alt="image" src="https://github.com/gd03champ/policypal-extention/assets/63779654/9c700672-5ecb-4b51-bdf4-351e2f7621ab"><br>
    - Select "Options" and enter your API key in the provided input field. Let the magic happen! 🪄✨
 
 7. To analyze a TOS or privacy policy page:
    - Right-click on a link to a TOS or privacy policy page.
-   - Select the "[PolicyPal✨] - Inspect Policy" option from the context menu. It's like having a secret detective tool! 🕵️‍♂️
-   <img width="437" alt="image" src="https://github.com/gd03champ/policypal-extention/assets/63779654/10be369e-2c33-4bf3-b7bf-a704733d87c6">
-   - The progress popup window will appear, showing the progress of the analysis. Stay tuned! ⌛️📊
-   <img width="290" alt="image" src="https://github.com/gd03champ/policypal-extention/assets/63779654/aed70404-3f1b-4ab5-8259-8c68fab602fe">
-   - After the analysis is complete, the summary will be displayed in an alert window. Get ready to see the essence of the content! 🧪✨
-   <img width="353" alt="image" src="https://github.com/gd03champ/policypal-extention/assets/63779654/706af74c-4b33-4dc3-bf16-1e8696203c73">
+   - Select the "[PolicyPal✨] - Inspect Policy" option from the context menu. It's like having a secret detective tool! 🕵️‍♂️<br>
+   <img width="437" alt="image" src="https://github.com/gd03champ/policypal-extention/assets/63779654/10be369e-2c33-4bf3-b7bf-a704733d87c6"><br>
+   - The progress popup window will appear, showing the progress of the analysis. Stay tuned! ⌛️📊<br>
+   <img width="290" alt="image" src="https://github.com/gd03champ/policypal-extention/assets/63779654/aed70404-3f1b-4ab5-8259-8c68fab602fe"><br>
+   - After the analysis is complete, the summary will be displayed in an alert window. Get ready to see the essence of the content! 🧪✨<br>
+   <img width="353" alt="image" src="https://github.com/gd03champ/policypal-extention/assets/63779654/706af74c-4b33-4dc3-bf16-1e8696203c73"><br>
    - The progress popup window will automatically close. It knows when it's time to exit the stage! 🚪🎭
 
 ## Bard API 🧙‍♂️🔮
