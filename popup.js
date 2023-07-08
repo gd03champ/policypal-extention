@@ -2,7 +2,7 @@
 chrome.runtime.onInstalled.addListener(function () {
     chrome.contextMenus.create({
         id: "inspectTos",
-        title: "Inspect TOS or Privacy Policy",
+        title: "Policypal✨ - Inspect policy",
         contexts: ["link"],
         documentUrlPatterns: ["*://*/*"]
     });
@@ -29,6 +29,8 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
                     console.error('Error:', error);
                     updateProgress('Error: \n' + error + "\n Please try again later or contact GD");
                 });
+        } else {
+            window.alert("Please paste link before clikcing the button! What will I analyze with an empty input box? Your head ?")
         }
     }
 });
@@ -71,8 +73,8 @@ function openProgressPopup() {
     chrome.windows.create({
         url: progressUrl,
         type: 'popup',
-        width: 370,
-        height: 400
+        width: 365,
+        height: 460
     }, function (window) {
         // Send a message to the progress popup to update the progress
         chrome.tabs.sendMessage(window.tabs[0].id, { action: 'updateProgress', progress: 'Processing...' });

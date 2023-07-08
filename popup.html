@@ -3,46 +3,101 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Terms &amp; Conditions Analyzer</title>
+    <title>Policypal - Terms &amp; Conditions Analyzer</title>
     <style>
+
         body {
             width: 350px;
-            height: 400px;
-            font-family: Arial, sans-serif;
+            height: 500px;
             text-align: center;
             padding: 20px;
             background-color: #f7f7f7;
+            border: 5px solid #5c79e3;
+            border-radius: 15px;
+        }
+
+        @keyframes border-pulse {
+            0% {
+                border-color: #5c79e3;
+            }
+
+            50% {
+                border-color: #f7f7f7;
+            }
+
+            100% {
+                border-color: #5c79e3;
+            }
         }
 
         h1 {
             color: #5c79e3;
+            font-size: 40px;
+            font-weight: 2000;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida' ;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .subtext {
+            font-size: 14px;
+            color: #999;
+            margin-top: -20px;
+        }
+
+        .link {
+            margin-top: 0%;
+            margin-bottom: 0%;
+            color: #999;
         }
 
         p {
             margin-top: 10px;
             margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 1.4;
         }
 
         input[type="text"] {
-            width: 200px;
-            height: 30px;
-            padding: 5px;
-            font-size: 14px;
+            width: 260px;
+            height: 40px;
+            padding: 8px;
+            font-size: 16px;
             border: 1px solid #ccc;
             border-radius: 5px;
             margin-top: 10px;
         }
 
         button {
-            width: 100px;
-            height: 30px;
+            width: 140px;
+            height: 40px;
             background-color: #5c79e3;
             color: #fff;
             border: none;
             border-radius: 5px;
-            font-size: 14px;
+            font-size: 16px;
             margin-top: 10px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #4672ca;
+        }
+
+        @keyframes button-pulse {
+            0% {
+                background-color: #5c79e3;
+            }
+
+            50% {
+                background-color: #f7f7f7;
+                color: #5c79e3;
+            }
+
+            100% {
+                background-color: #5c79e3;
+            }
         }
 
         a {
@@ -54,47 +109,89 @@
             text-decoration: underline;
         }
 
-        .magnifying-glass {
+        .github-icon {
             display: inline-block;
-            position: relative;
-            width: 20px;
-            height: 20px;
-            margin-left: 5px;
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
             margin-bottom: -5px;
-        }
-
-        .magnifying-glass:before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 8px;
-            height: 8px;
-            border: 1px solid #5c79e3;
+            background-image: url("files/github.png");
+            background-size: cover;
+            cursor: pointer;
             border-radius: 50%;
+            transition: transform 0.3s ease;
         }
 
-        .magnifying-glass:after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 12px;
-            height: 2px;
+        .github-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .gd-icon {
+            margin-top: 5%;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+            margin-left: 10px;
+            margin-bottom: -5px;
+            background-image: url("files/GD.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gd-icon:hover {
+            transform: scale(1.1);
+        }
+
+
+        .author-section {
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        .author-name {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .author-details {
+            font-size: 14px;
+        }
+
+        .configure-button {
+            width: 160px;
+            height: 30px;
             background-color: #5c79e3;
-            border-radius: 2px;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-top: 20px;
+            cursor: pointer;
         }
     </style>
 </head>
 
 <body>
-    <h1>Terms &amp; Conditions Analyzer</h1>
-    <p>Paste the link to terms or privacy policies:</p>
-    <input type="text" id="linkInput" placeholder="Enter the link">
-    <button id="analyzeButton">Analyze <span class="magnifying-glass"></span></button>
-    <p>Configure API Key <a href="#" id="optionsLink">here</a>.</p>
+    <h1>Policypal</h1>
+    <p class="subtext">Your Smart Companion for Terms & Privacy Analysis 🕵️‍♀️</p>
+    <input type="text" id="linkInput" placeholder="Paste the link to tos/privacy policy">
+    <br>
+    <button id="analyzeButton">Analyze ✨</button>
+    <br>
+    <a href="#" id="optionsLink">
+        <p><button class="configure-button">Configure API Key</button></p>
+    </a>
+    <p>Or just right-click on terms or privacy policies to see the analyze option</p>
+    <div class="author-section"><hr>
+        <!--<div class="author-name">Developed By</div>-->
+        <div class="author-details">
+            <a href="https://github.com/gd03champ/policypal-extention" target="_blank" class="github-icon" title="Contribute on GitHub"></a><br>
+            <a href="https://gd03champ.web.app" target="_blank" class="gd-icon" title="Developer Link"></a><br>
+            <p class="link">gd03champ.web.app</p>
+        </div>
+    </div>
     <script src="popup.js"></script>
 </body>
 
