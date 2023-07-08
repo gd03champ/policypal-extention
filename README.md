@@ -1,6 +1,6 @@
 README.md
 
-# Policypal: Your Smart Companion for Terms & Privacy Analysis 🕵️‍♀️🔍
+# PolicyPal: Your Smart Companion for Terms & Privacy Analysis 🕵️‍♀️🔍
 
 Policypal is a browser extension that allows users to analyze and summarize terms & conditions and privacy policies of websites. The extension 🚀 harnesses the power of the Bard API 🧙‍♂️✨, a custom API built with Node.js and Express, to perform the analysis and generate the summaries. Get ready to dive into the world of legal jargon and privacy policies with ease! 💪 and never fall for hidden terms or harmfull privacy policies again.
 
@@ -38,7 +38,7 @@ To use the Terms Trackers extension, follow these steps:
 1. Clone the repository to your local machine:
 
    ```shell
-   git clone https://github.com/your-username/terms-trackers.git
+   git clone https://github.com/gd03champ/policypal-extention.git
    ```
 
 2. Open Google Chrome and go to the Extensions page by entering the following URL in the address bar:
@@ -52,14 +52,19 @@ To use the Terms Trackers extension, follow these steps:
 4. Click on the "Load unpacked" button and select the cloned project directory (`policypal-extention`). Let the extension come to life! ⚡️
 
 5. Update the API key in the Options page:
+   
    - Click on the Policypal extension icon in the Extensions menu. It's time to give it some personal touch! 😎
+   <img width="960" alt="image" src="https://github.com/gd03champ/policypal-extention/assets/63779654/9c700672-5ecb-4b51-bdf4-351e2f7621ab">
    - Select "Options" and enter your API key in the provided input field. Let the magic happen! 🪄✨
 
-6. To analyze a TOS or privacy policy page:
-   - Right-click on a link to a TOS or privacy policy page. See the magic unfold before your eyes! 🪄✨
-   - Select the "Inspect TOS or Privacy Policy" option from the context menu. It's like having a secret detective tool! 🕵️‍♂️
+7. To analyze a TOS or privacy policy page:
+   - Right-click on a link to a TOS or privacy policy page.
+   - Select the "[PolicyPal✨] - Inspect Policy" option from the context menu. It's like having a secret detective tool! 🕵️‍♂️
+   <img width="437" alt="image" src="https://github.com/gd03champ/policypal-extention/assets/63779654/10be369e-2c33-4bf3-b7bf-a704733d87c6">
    - The progress popup window will appear, showing the progress of the analysis. Stay tuned! ⌛️📊
+   <img width="290" alt="image" src="https://github.com/gd03champ/policypal-extention/assets/63779654/aed70404-3f1b-4ab5-8259-8c68fab602fe">
    - After the analysis is complete, the summary will be displayed in an alert window. Get ready to see the essence of the content! 🧪✨
+   <img width="353" alt="image" src="https://github.com/gd03champ/policypal-extention/assets/63779654/706af74c-4b33-4dc3-bf16-1e8696203c73">
    - The progress popup window will automatically close. It knows when it's time to exit the stage! 🚪🎭
 
 ## Bard API 🧙‍♂️🔮
@@ -70,7 +75,7 @@ The Bard API is an unofficial custom API developed by me using Node.js and Expre
 
 Contributions to the Terms Trackers project are highly appreciated! We believe in the power of collaboration and welcome your contributions with open arms. If you find any issues or have suggestions for improvements, please create a GitHub issue or submit a pull request. Before contributing, make sure to review the project's guidelines for contributing and code of conduct.
 
-Let's make the Policypal extension even more awesome together!
+Let's make the PolicyPal extension even more awesome together!
 
 ## License 📄
 
