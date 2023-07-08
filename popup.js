@@ -31,7 +31,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (chrome.runtime.lastError) {
                   reject(new Error('Error executing script: ' + chrome.runtime.lastError.message));
                 } else {
-                  resolve(response.content);
+                    const result = processTos(response.content);
+
+                    console.log("toc extracted: "+result);
+                    resolve(result);
                 }
   
                 chrome.tabs.remove(tab.id); // Close the tab after scraping
@@ -42,17 +45,58 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   }
+
+  function processTos(content){
+    const cleanedCont = content.replace(/\n/g, ' ').replace(/"/g, '').replace(/\t/g, '').replace("Learn more", ""); //removing all unwanted elements that hinder the prompting
+    const trucCont = cleanedCont.trim().split(/\s+/, 1500).join(' ')
+    console.log("web content truncated to 1500 words: "+ trucCont);
+    return trucCont;
+  }
   
   
   function analyzeContent(content) {
     return new Promise(function(resolve, reject) {
-      // Perform your text analysis and summarization here
-      // You can use NLP libraries or services to extract relevant information and generate summaries
-      // Resolve with the summary
-      var summary = "summary content: " + content;
-      resolve(summary);
+      // Create the request body
+      //const promptEng = "Given below is the terms of servoce or privacy policy of a website. Analyze and summarize it : ";
+      const promptEng = content;
+      var requestBody = JSON.stringify({
+        prompt:   promptEng,
+        psidCookie: "YQgbow8W13uu5fs67vxFyKnnfAI0pehZQMN44w0odbrF-rnJDA7mAVVpvl4mo7KnJ7f1hQ."
+      });
+  
+      // Create the request options
+      var requestOptions = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: requestBody
+      };
+  
+      console.log("posting summary request to bard...");
+
+      // Make the POST request to the endpoint
+      fetch("https://bardapi-gd.onrender.com/ask", requestOptions)
+        .then(function(response) {
+          if (!response.ok) {
+            throw new Error("Request failed with status: " + response.status);
+          }
+          return response.json();
+        })
+        .then(function(data) {
+          // Extract the summarized text from the response
+          var summarizedText = data; //data.summary;
+  
+          // Resolve with the summarized text
+          resolve(summarizedText);
+        })
+        .catch(function(error) {
+          // Handle any errors
+          reject(error);
+        });
     });
   }
+  
   
   function showSummary(summary) {
     // Show the summarized output to the user
