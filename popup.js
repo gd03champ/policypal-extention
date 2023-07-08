@@ -2,7 +2,7 @@
 chrome.runtime.onInstalled.addListener(function () {
     chrome.contextMenus.create({
         id: "inspectTos",
-        title: "Policypal✨ - Inspect policy",
+        title: "PolicyPal✨ - Inspect policy",
         contexts: ["link"],
         documentUrlPatterns: ["*://*/*"]
     });
@@ -120,10 +120,26 @@ function fetchContent(link) {
 
 function processTos(content) {
     const cleanedCont = content.replace(/\n/g, ' ').replace(/"/g, '').replace(/\t/g, '').replace("Learn more", ""); //removing all unwanted elements that hinder the prompting
-    const trucCont = cleanedCont.trim().split(/\s+/, 1500).join(' ')
+    const trucCont = shortenString(cleanedCont, 1450)
     console.log("web content truncated to 1500 words: " + trucCont);
     return trucCont;
 }
+
+function shortenString(str, wordLimit) {
+    if (str.length <= wordLimit) {
+      return str; // No need to shorten if the string is already within the limit
+    }
+    
+    const words = str.split(' ');
+    const topPortion = words.slice(0, Math.floor(wordLimit / 3)).join(' ');
+    const middlePortion = words.slice(
+      Math.floor((words.length - wordLimit) / 2),
+      Math.floor((words.length - wordLimit) / 2) + Math.floor(wordLimit / 3)
+    ).join(' ');
+    const bottomPortion = words.slice(-Math.floor(wordLimit / 3)).join(' ');
+    
+    return topPortion + ' ' + middlePortion + ' ' + bottomPortion;
+  }
 
 function analyzeContent(content) {
     return new Promise(function (resolve, reject) {
@@ -140,7 +156,7 @@ function analyzeContent(content) {
 
             // Create the request body
             //const promptEng = "Given below is the terms of servoce or privacy policy of a website. Analyze and summarize it : ";
-            const promptEng = "Given followed is the toc or privacy polcy content copied from a website. Analyze the content line by line and summarize and Also finally mention if there's any potential harmfull elements in the content" + content;
+            const promptEng = "Given followed is the toc or privacy polcy content copied from a website. Please analyze the content provided below and identify any policy or terms that may be concerning or problematic. Provide detailed insights and explanations regarding your findings." + content;
             var requestBody = JSON.stringify({
                 prompt: promptEng,
                 psidCookie: apiKey

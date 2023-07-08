@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "Terms Trackers",
+  "name": "PolicyPal",
   "version": "1.0",
-  "description": "A browser extension to summarize and analyze terms & conditions and privacy policies.",
+  "description": "Your Smart Companion for Terms & Privacy Analysis 🔍",
   "permissions": ["activeTab", "storage", "tabs", "contextMenus", "https://*/"],
   "background": {
     "scripts": ["popup.js"],
